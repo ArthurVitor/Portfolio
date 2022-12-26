@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #8c38ff;
+    --light: #EEEEEE;
+    --dark: #212121;
+    --less_darker: #212f3d
+}
+
+body{
+    background-color: var(--dark);
+}
+
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: 99;
+    background-color: var(--dark);
+    padding: 16px 32px;
+    border-bottom: 3px solid var(--primary);
+}
+
+h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.hamburguer{
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    user-select: none;
+
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.hamburguer span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background-color: var(--light);
+    border-radius: 6px;
+    z-index: 1;
+
+    transform-origin: 0 0;
+
+    transition: 0.4s;
+}
+
+.hamburguer:hover span:nth-child(2){
+    transform: translateX(10px);
+    background-color: var(--primary);
+}
+
+.hamburguer.is-active span:nth-child(1) {
+    transform: translate(0px, -2px) rotate(45deg);
+}
+
+.hamburguer.is-active span:nth-child(2){
+    opacity: 0;
+    transform: translateX(15px);
+}
+
+.hamburguer.is-active span:nth-child(3){
+    transform: translate(-3px, 3px) rotate(-45deg);
+}
+
+.hamburguer.is-active:hover span{
+    background-color: var(--primary);
+}
+
+.menu{
+    display: none;
+    flex: 1 1 0%;
+    justify-content: flex-end;
+    margin: 0 --16px;
+}
+
+.menu a {
+    color: #fff;
+    margin: 0 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+    padding: 8px 16px;
+    border-radius: 999px;
+}
+
+.menu a.is-active, .menu a:hover {
+    background-color: var(--primary);
+}
+
+@media (min-width: 768px){
+    .hamburguer{
+        display: none;
+    }
+    
+    .menu{
+        display: flex;
+    }
+}
+
+.container_about {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_me_content {
+    height: fit-content;
+    width: 300px;
+}
+
+.about_me_content > P {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+@media (min-width: 768px){
+    .container_about {
+        width: 98vw;
+    }
+}
+
+.container_grid {
+    display: flex;
+    width: 98vw;
+    height: 100vh;
+    justify-content: center;
+
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 0.2fr);
+    grid-gap: 1px;
+    height: 125px
+  }
+
+.form_control {
+    padding: 0.55rem 1.35rem;
+    width: 80vw;
+    border-radius: 5px;
+    background-color: azure;
+    color: black;
+    font-weight: 500;
+}
+
+label {
+    margin: 5px;
+    text-align: left;
+}
+
+.container_grid_form {
+    display: flex;
+    width: 98vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.grid_form {
+    display: grid;
+    grid-template-columns: repeat(1, 0.2fr);
+    grid-gap: 1px;
+    height: 125px
+}
+
+.button_submit {
+    color: black;
+    width: 5rem;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-weight: 400;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.project_container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.project_image_container {
+    height: fit-content;
+    width: fit-content;
+}
+
+.project_image {
+    width: 350px;
+    height: 350px;
+}
+
+.project_details {
+    margin-left: 50px;
+}
+
+@media (max-width: 768px){
+    .project_container {
+        flex-direction: column;
+    }
+
+    .project_details {
+        margin-top: 15px;
+    }
+}

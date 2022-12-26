@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo %}
+{% for i in obj %}
+<div class="project_container">
+        <div class="project_image_container">
+            <img src="{{ i.img_url }}" alt="" class="project_image">
+        </div>
+        <div class="project_details_container">
+        <div class="project_details">
+            <p style="text-align: left; color: var(--primary);">Nome do Projeto:</p>
+            <p style="margin-bottom: 10px; text-align: left;">{{ i.nm }}</p>
+
+            <p style="text-align: left; color: var(--primary);">Tecnologia Usadas:</p>
+            <p style="margin-bottom: 10px; text-align: left;">{{ i.tec_us }}</p>
+
+            <p style="text-align: left; color: var(--primary);">Descrição:</p>
+            <p style="width: 250px; margin-bottom: 10px; text-align: left;">{{ i.desc }}</p>
+
+            <p style="text-align: left; color: var(--primary);">Link(s):</p>
+            <p style="text-align: left;">Git: {{ i.repo }}</p>
+            {% if i.dep %}
+            <p style="text-align: left;">Deploy: {{ i.dep_link }}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
